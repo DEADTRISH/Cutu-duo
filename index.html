@@ -122,10 +122,10 @@ document.addEventListener("mousemove", (e)=>{
     lastTime = now;
 
     let spark = document.createElement("div");
-    spark.className = "spark";
-    spark.style.left = e.clientX + "px";
-    spark.style.top = e.clientY + "px";
+   spark.className = "spark";
 
+let colors = ["#ff4d6d", "#ff85a2", "#ffc2d1", "#ffd6e0"];
+spark.style.background = colors[Math.floor(Math.random()*colors.length)];
     document.body.appendChild(spark);
     setTimeout(()=> spark.remove(), 400);
 });
