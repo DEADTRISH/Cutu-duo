@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&family=Fredoka:wght@400;600&display=swap');
 
 *{
 margin:0;
@@ -7,7 +7,7 @@ box-sizing:border-box;
 font-family:'Quicksand', sans-serif;
 }
 
-/* 🌈 background */
+/* hide default cursor */
 body{
 height:100vh;
 background: linear-gradient(135deg, #ffd6e0, #dff6ff);
@@ -15,6 +15,20 @@ display:flex;
 justify-content:center;
 align-items:center;
 overflow:hidden;
+cursor:none;
+}
+
+/* 💖 custom cursor */
+.cursor{
+position:fixed;
+width:20px;
+height:20px;
+background:#ff4d6d;
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%, -50%);
+box-shadow:0 0 15px rgba(255,77,109,0.6);
+z-index:9999;
 }
 
 /* 🧊 card */
@@ -23,15 +37,10 @@ width:350px;
 padding:20px;
 border-radius:20px;
 text-align:center;
-
-```
 background:rgba(255,255,255,0.25);
 backdrop-filter:blur(15px);
 box-shadow:0 10px 40px rgba(0,0,0,0.1);
-
 position:absolute;
-```
-
 }
 
 /* 💖 heading */
@@ -58,14 +67,18 @@ background:url("https://media1.tenor.com/m/2VprHA868S8AAAAC/yummy-desserts-desse
 border-radius:15px;
 }
 
-/* buttons */
+/* 🎀 buttons */
 .answer{
-width:110px;
-height:45px;
-border-radius:12px;
+width:120px;
+height:48px;
+border-radius:999px;
 cursor:pointer;
 border:none;
-font-weight:600;
+font-family:'Fredoka', sans-serif;
+font-size:16px;
+display:flex;
+align-items:center;
+justify-content:center;
 transition:0.2s;
 }
 
@@ -77,14 +90,16 @@ margin-top:10px;
 
 /* YES */
 #yes{
-background:#ff4d6d;
+background: linear-gradient(135deg, #ff4d6d, #ff85a2);
 color:white;
+box-shadow:0 6px 15px rgba(255,77,109,0.4);
 }
 
 /* NO */
 #no{
 background:white;
 border:2px solid #ff4d6d;
+color:#ff4d6d;
 }
 
 /* 💖 hearts */
@@ -101,7 +116,7 @@ opacity:0;
 }
 }
 
-/* ✨ cursor spark */
+/* ✨ cursor trail */
 .spark{
 position:fixed;
 width:6px;
@@ -127,11 +142,14 @@ transform:scale(2.5);
 #fix{
 width:100%;
 margin-top:15px;
-background:#ff4d6d;
+background: linear-gradient(135deg, #ff4d6d, #ff85a2);
 color:white;
+font-family:'Fredoka', sans-serif;
+border-radius:999px;
+box-shadow:0 6px 15px rgba(255,77,109,0.4);
 }
 
-/* 📱 mobile */
+/* mobile */
 @media(max-width:450px){
 .container, .confirmation{
 width:90%;
