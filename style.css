@@ -24,11 +24,14 @@ padding:20px;
 border-radius:20px;
 text-align:center;
 
+```
 background:rgba(255,255,255,0.25);
 backdrop-filter:blur(15px);
 box-shadow:0 10px 40px rgba(0,0,0,0.1);
 
 position:absolute;
+```
+
 }
 
 /* 💖 heading */
@@ -101,18 +104,22 @@ opacity:0;
 /* ✨ cursor spark */
 .spark{
 position:fixed;
-width:5px;
-height:5px;
-background:#ff4d6d;
+width:6px;
+height:6px;
 border-radius:50%;
 pointer-events:none;
-animation: fade 0.4s linear forwards;
+animation: fade 0.6s ease-out forwards;
+filter: blur(1px);
 }
 
 @keyframes fade{
-to{
+0%{
+opacity:1;
+transform:scale(1);
+}
+100%{
 opacity:0;
-transform:scale(2);
+transform:scale(2.5);
 }
 }
 
