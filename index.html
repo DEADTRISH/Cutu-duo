@@ -116,7 +116,7 @@ let lastTime = 0;
 
 document.addEventListener("mousemove", (e)=>{
     let now = Date.now();
-    if(now - lastTime < -10) return;
+    if(now - lastTime < 0) return;
     lastTime = now;
 
     let spark = document.createElement("div");
