@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duo?🥹👉🏻👈🏻</title>
+    <title>Duo? 💖</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,22 +19,22 @@
 </div>
 
 <div class="answer-box">
-    <button class="answer" id="yes">Yes!!! 😳</button>
-    <button class="answer" id="no">No 😒</button>
+    <button class="answer" id="yes">Yes!!! 💖</button>
+    <button class="answer" id="no">No 😈</button>
 </div>
 ```
 
 </div>
 
 <div class="confirmation">
-    <h1>Yayyyyyyyy!!! Cutuuuu 🐣</h1>
+    <h1>Yayyyyyyyy!!! Cutuuuu 💖</h1>
 
 ```
 <div class="fix-gif">
     <div class="fix-gifimg"></div>
 </div>
 
-<button class="answer" id="fix">click here to drag me online</button>
+<button class="answer" id="fix">call me cutuu 📞</button>
 ```
 
 </div>
@@ -46,28 +46,28 @@ const container = document.querySelector(".container");
 const confirmation = document.querySelector(".confirmation");
 
 let noTexts = [
-    "No 😒",
-    "😭😭 pleaseee",
-    "uwi uwi hora🥺",
-    "pweaseee cutuuu",
-    "hayee pleasee",
-    "please shonaaa"
+    "No 😈",
+    "pakka? 😏",
+    "soch le 🥺",
+    "last chance 😭",
+    "pleaseeee 🥹",
+    "ab toh ha bol 😤"
 ];
 
 let count = 0;
 let yesScale = 1;
 
-// hide confirmation initially
+// hide confirmation at start
 confirmation.style.display = "none";
 
-// YES CLICK 💖
+// YES click
 yes.onclick = (e) => {
     container.style.display = "none";
     confirmation.style.display = "block";
     heartBurst(e);
 };
 
-// NO CLICK 😈
+// NO click
 no.onclick = (e) => {
     no.innerText = noTexts[count % noTexts.length];
 
@@ -94,15 +94,12 @@ function heartBurst(e){
     for(let i=0;i<6;i++){
         let heart = document.createElement("div");
         heart.className = "heart";
-        heart.innerText = "😭";
+        heart.innerText = "💖";
 
         document.body.appendChild(heart);
 
-        let x = e.clientX;
-        let y = e.clientY;
-
-        heart.style.left = x + "px";
-        heart.style.top = y + "px";
+        heart.style.left = e.clientX + "px";
+        heart.style.top = e.clientY + "px";
 
         let angle = Math.random()*360;
         let distance = Math.random()*80;
@@ -114,23 +111,28 @@ function heartBurst(e){
     }
 }
 
-// ✨ cursor trail (less spammy now)
+// ✨ improved cursor trail
 let lastTime = 0;
+
 document.addEventListener("mousemove", (e)=>{
     let now = Date.now();
-    if(now - lastTime < 0) return;
+    if(now - lastTime < 70) return;
     lastTime = now;
 
     let spark = document.createElement("div");
-   spark.className = "spark";
+    spark.className = "spark";
 
-let colors = ["#ff4d6d", "#ff85a2", "#ffc2d1", "#ffd6e0"];
-spark.style.background = colors[Math.floor(Math.random()*colors.length)];
+    let colors = ["#ff4d6d", "#ff85a2", "#ffc2d1", "#ffd6e0"];
+    spark.style.background = colors[Math.floor(Math.random()*colors.length)];
+
+    spark.style.left = e.clientX + "px";
+    spark.style.top = e.clientY + "px";
+
     document.body.appendChild(spark);
-    setTimeout(()=> spark.remove(), 400);
+    setTimeout(()=> spark.remove(), 600);
 });
 
-// 📞 WhatsApp
+// WhatsApp
 document.getElementById("fix").onclick = () => {
     window.location = "https://wa.me/+916387607273?text=chal ok but gussa dilaya mai chali jaungi!!!!!";
 };
