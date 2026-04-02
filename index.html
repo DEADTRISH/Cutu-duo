@@ -1,70 +1,95 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duo?</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Duo? 💖</title>
+
+```
+<!-- external css -->
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="question">
-            <h1>cutuuuu will u be my duo 🥹👉🏻👈🏻?</h1>
-        </div>
-        <div class="gif">
-            <div class="gifimg"></div>
-        </div>
-        <div class="answer-box">
-                <button class="answer" id="yes">Yes!!!</button>
-                <button class="answer" id="no">No</button>
-        </div>
-        
+
+```
+<div class="container">
+    <div class="question">
+        <h1>cutuuuu will u be my duo 🥹👉🏻👈🏻?</h1>
     </div>
 
-    <div class="confirmation">
-        <h1>Yayyyyyyyy!!! Cutuuuu</h1>
-            <div class="question">
-                <div class="fix-gif">
-                    <div class="fix-gifimg"></div>
-                </div>
-                <!-- <a href="https://wa.me/+916387607273?text='chal ok but gussa dilaya mai chali jaungi!!!!!' ">
-                </a> -->
-                    <button class="answer" id="fix">cutu click to call me online</button>
-                
-            </div>
+    <div class="gif">
+        <div class="gifimg"></div>
     </div>
 
+    <div class="answer-box">
+        <button class="answer" id="yes">Yes!!! 💖</button>
+        <button class="answer" id="no">No 😈</button>
+    </div>
+</div>
+
+<div class="confirmation">
+    <h1>Yayyyyyyyy!!! Cutuuuu 💖</h1>
+
+    <div class="fix-gif">
+        <div class="fix-gifimg"></div>
     </div>
 
-    <script>
-        const yes = document.querySelector("#yes");
-const no = document.querySelector("#no");
-const confirmation = document.querySelector(".confirmation");
-const container = document.querySelector(".container");
+    <button class="answer" id="fix">cutu click to call me online 📞</button>
+</div>
 
-yesAnswerMethod = () => {
-    container.style.display = 'none'
-    confirmation.style.display = 'block'
-}
+<script>
+    const yes = document.querySelector("#yes");
+    const no = document.querySelector("#no");
+    const confirmation = document.querySelector(".confirmation");
+    const container = document.querySelector(".container");
 
-noAnswerMethod = () => {
-    no.style.position = 'absolute'
+    // YES click
+    yes.onclick = () => {
+        container.style.display = "none";
+        confirmation.style.display = "block";
+    };
 
-    xPosition = Math.floor(Math.random() * container.clientWidth)
-    yPosition = Math.floor(Math.random() * container.clientHeight)
+    // 😈 playful NO button (not disappearing)
+    let noTexts = [
+        "No 😈",
+        "pakka? 😏",
+        "soch le 🥺",
+        "last chance 😭",
+        "mat kar yaar 💔",
+        "pleaseeee 🥹",
+        "ab toh ha bol 😤"
+    ];
 
-    no.style.top = `${yPosition}px`
-    no.style.left = `${xPosition}px`
+    let count = 0;
 
-}
+    no.onclick = () => {
+        no.innerText = noTexts[count % noTexts.length];
 
-no.addEventListener('click', noAnswerMethod)
-yes.addEventListener('click', yesAnswerMethod)
+        let moveX = Math.random() * 30 - 15;
+        let moveY = Math.random() * 30 - 15;
 
-document.getElementById("fix").addEventListener("click", function(){
-    window.location= "https://wa.me/+916387607273?text=chal ok but gussa dilaya mai chali jaungi!!!!! ";
-}, false);
-    </script>
-    
+        no.style.position = "relative";
+        no.style.left = moveX + "px";
+        no.style.top = moveY + "px";
+
+        let scale = 1 - (count * 0.05);
+        if(scale < 0.75) scale = 0.75;
+        no.style.transform = `scale(${scale})`;
+
+        count++;
+    };
+
+    // WhatsApp redirect
+    document.getElementById("fix").onclick = () => {
+        window.location = "https://wa.me/+916387607273?text=chal ok but gussa dilaya mai chali jaungi!!!!!";
+    };
+
+</script>
+```
+
 </body>
 </html>
